@@ -5,9 +5,9 @@ import requests
 
 
 class FintagClient:
-    def __init__(self, api_key: str, base_url: str = "<API_BASE_URL>"):
+    def __init__(self, api_url: str, api_key: str):
+        self.api_url = api_url.rstrip("/")
         self.api_key = api_key
-        self.base_url = base_url.rstrip("/")
 
     def _get_headers(self):
         timestamp = str(int(time.time() * 1000))  # ms

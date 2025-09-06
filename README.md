@@ -17,15 +17,15 @@ Here's a quick example of how to use the SDK:
 ```python
 from fintag import FintagClient
 
-client = FintagClient(api_key="your_api_key")
+client = FintagClient(api_url="<API_URL>", api_key="<API_KEY>")
 
 
 # Verify FinTag
-fintag_exists = client.verify("fintag_id")
+fintag_exists = client.verify("#fintag_id")
 print(fintag_exists)
 
 # Get wallet information
-wallet_info = client.get_wallet_info()
+wallet_info = client.get_wallet_info("#fintag_id")
 print(wallet_info)
 ```
 
