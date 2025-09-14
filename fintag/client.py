@@ -25,14 +25,14 @@ class FintagClient:
 
     def verify(self, fintag: str):
         cleaned_fintag = fintag[1:] if fintag.startswith("#") else fintag
-        url = f"{self.base_url}/fintag/verify/{cleaned_fintag}"
+        url = f"{self.api_url}/fintag/verify/{cleaned_fintag}"
         response = requests.get(url, headers=self._get_headers())
         response.raise_for_status()
         return response.json()
 
     def get_wallet_info(self, fintag: str):
         cleaned_fintag = fintag[1:] if fintag.startswith("#") else fintag
-        url = f"{self.base_url}/fintag/wallet/{cleaned_fintag}"
+        url = f"{self.api_url}/fintag/wallet/{cleaned_fintag}"
         response = requests.get(url, headers=self._get_headers())
         response.raise_for_status()
         return response.json()
